@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #e94560;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    color: #e94560;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.game-mode {
+    margin-bottom: 1rem;
+}
+
+.game-mode button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #0f3460;
+    color: #e94560;
+    transition: all 0.3s ease;
+}
+
+.game-mode button:hover {
+    background-color: #16213e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+.game-mode button.active {
+    background-color: #e94560;
+    color: #1a1a2e;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+.cell:hover {
+    background-color: rgba(233, 69, 96, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+}
+
+.cell.x {
+    color: #00fff5;
+}
+
+.cell.o {
+    color: #ffa500;
+}
+
+.status {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #e94560;
+    text-shadow: 0 0 5px rgba(233, 69, 96, 0.5);
+}
+
+.reset-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #e94560;
+    color: #1a1a2e;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #ff6b6b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+@media (max-width: 400px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cell.x, .cell.o {
+    animation: pulse 1s infinite;
+}
